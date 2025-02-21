@@ -1,0 +1,513 @@
+/* 
+Theme Name:EcoWave
+Description:practice site
+Author:iotavata
+Version:1.0.1
+*/
+
+
+@charset "UTF-8";
+body {
+  width: 100%;
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+  font-family: serif;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  font-size: 32px;
+  margin: 0;
+}
+
+h1 {
+  font-size: 60px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 40px;
+  color: #fff;
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+.top_nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 595px;
+  justify-content: center;
+  align-items: center;
+  background-color: #434343;
+  margin: 0;
+}
+
+.top_nav p {
+  color: #fff;
+  font-size: 12px;
+}
+
+.top_nav img{
+    width: 20px;
+    height: 20px;
+}
+
+.SNS_icon {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.SNS_icon li {
+  color: white;
+}
+
+.lower_nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 700px;
+  padding: 20px;
+}
+
+.lower_nav .com_name_icon {
+  display: flex;
+  align-items: center;
+}
+
+.lower_nav img {
+  width: 60px;
+  height: 60px;
+}
+
+/* ハンバーガー用スタイル */
+.ham {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  justify-content: right;
+}
+
+.drawer_hidden {
+  display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer_open {
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100; /* 重なり順を一番上にする */
+  cursor: pointer;
+}
+
+/* ハンバーガーメニューのアイコン */
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+  content: "";
+  display: block;
+  height: 10px;
+  width: 60px;
+  border-radius: 3px;
+  background: #95d29d;
+  transition: 0.5s;
+  position: absolute;
+}
+
+/* 三本線の一番上の棒の位置調整 */
+.drawer_open span:before {
+  bottom: 16px;
+}
+
+/* 三本線の一番下の棒の位置調整 */
+.drawer_open span:after {
+  top: 16px;
+}
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer_input:checked ~ .drawer_open span {
+  background: rgba(255, 255, 255, 0);
+}
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+#drawer_input:checked ~ .drawer_open span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+#drawer_input:checked ~ .drawer_open span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* メニューのデザイン*/
+.ham_content {
+  position: absolute;
+  top: 135px;
+  right: 282px;
+  display: none; /* メニュー消す */
+  z-index: 99;
+  background: rgba(225, 225, 225, 0);
+  transition: 0.5s;
+  justify-content: right;
+  color: #95d29d;
+}
+
+.ham_content a {
+  color: #95d29d;
+  text-decoration: none;
+}
+
+.ham_list{
+    padding: 0;
+    margin: 0;
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+#drawer_input:checked ~ .ham_content {
+  display: flex; /* メニューを表示 */
+}
+
+.FV {
+  width: 100%;
+  height: 53.4vw;
+  /* background: linear-gradient(
+      to bottom,
+      transparent,
+      75%,
+      rgba(86, 255, 106, 0.3)
+    ),
+    url("../img/FV.png"); */
+  position: relative;
+}
+
+.FV .slick{
+  width: 100%;
+  height: 53.4vw;
+}
+
+.bg{
+  width:100%;
+  height: 53.4vw;
+  background-size: cover;
+}
+
+.bg01{
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      75%,
+      rgba(86, 255, 106, 0.3)
+    ),
+    url("img/FV.png");
+    z-index: 99;
+}
+
+.bg02{
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      75%,
+      rgba(86, 255, 106, 0.3)
+    ),
+    url("img/mountain.png");
+    z-index: 99;
+}
+
+.bg03{
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      75%,
+      rgba(86, 255, 106, 0.3)
+    ),
+    url("img/river.png");
+    z-index: 99;
+}
+
+.bg04{
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      75%,
+      rgba(86, 255, 106, 0.3)
+    ),
+    url("img/shor.png");
+    z-index: 99;
+}
+
+.FV .scroll_bar {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  top: 700px;
+  z-index: 100;
+  left: 44.5%;
+  rotate: 90deg;
+}
+
+.scroll_bar p {
+    font-size: 16px;
+  z-index: 100;
+  color: #fff;
+  margin: 0 100px 0 0;
+}
+
+.scroll_bar span {
+  content: "";
+  background-color: #fff;
+  height: 1px;
+  width: 100px;
+  z-index: 100;
+  position: absolute;
+}
+
+.FV .text_box {
+  border: solid #fff 3px;
+  text-align: left;
+  position: absolute;
+  top: 250px;
+  left: 800px;
+  padding: 20px;
+}
+
+.FV .text_box p,
+h1 {
+  color: #fff;
+}
+
+.mid_titile {
+  background-color: #7da975;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 200px;
+}
+
+.mid_titile img {
+  width: 490px;
+  height: 100%;
+}
+
+.mid_titile .text_box h1 {
+  font-size: 120px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.more_btn {
+  background-color: rgba(225, 225, 225, 0);
+  color: #fff;
+  border: 0px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #50AC6D;
+  gap: 80px;
+  padding: 80px 200px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    gap: 60px;
+    margin-top: 50px;
+}
+
+.side_img{
+  width: 450px;
+  height: 450px;
+}
+
+.container h1{
+    color: black;
+    text-shadow: #95D29D 1px 1px 2px;
+}
+
+.container .labels{
+    gap: 10px;
+    display: flex;
+    position: absolute;
+    top: -40px;
+    left: 10px;
+}
+
+.container label{
+    background-color: #97FFA3;
+    color: #24A439;
+    padding: 10px 40px;
+    border-radius: 100px;
+}
+
+.container .text_box{
+    max-width: 500px;
+    padding: 0 10px;
+}
+
+.container .text_box p{
+    font-size: 24px;
+}
+
+.container .text_box h1{
+  font-size: 50px;
+}
+
+.container .img_box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.container .img_box img{
+    width: 200px;
+    height: 200px;
+}
+.img_box .img01,.img02{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.img02{
+    margin-bottom: 50px;
+}
+.img01{
+    margin-top: 50px;
+}
+footer{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    background-color: #434343;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    transition: all 0.3s;
+    z-index: 100;
+}
+
+.logo:hover{
+    width: 200px;
+    height: 200px;
+}
+
+.console {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle {
+    position: relative;
+    width: 0%;
+    height: 0%;
+    border-radius: 50%;
+    background-color: #000;
+    transition: all 0.3s;
+}
+.label {
+    opacity: 0;
+    position: absolute;
+    color: #fff;
+    font-size: 16px;
+    transition: opacity .3s ease;
+    cursor: pointer;
+}
+
+.label a{
+  color: #fff;
+}
+
+.label.top {
+    top: 10px;
+    left: 10px;
+    transform: translateX(-50%);
+}
+
+.label.about {
+bottom: 16px;
+right: -93px;
+transform: translateX(-50%);
+}
+
+.label.recruit {
+top: 30px;
+right: -64px;
+transform: translateY(-50%);
+}
+
+.label.contact {
+bottom: -6px;
+left: -79px;
+transform: translateY(-50%);
+}
+
+.logo:hover+.circle{
+    width: 100%;
+    height: 100%;
+}
+
+.logo:hover ~ .circle .label {
+    opacity: 1;
+}
+
+.circle:hover{
+    width: 100%;
+    height: 100%;
+}
+
+.circle:hover  .label{
+    opacity: 1;
+}
+.circle:hover .logo{
+    width: 200px;
+    height: 200px;
+}
+
+.recruit_bread{
+  background-image: url("img/Aboutusbox.png");
+  padding: 60px 220px;
+}
